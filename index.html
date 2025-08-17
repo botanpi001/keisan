@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>たし算フラッシュカード</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#4f46e5',
+              'brand-secondary': '#10b981',
+              'brand-light': '#f0f9ff',
+              'brand-dark': '#1e293b',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            keyframes: {
+              'swoop-in': {
+                '0%': { transform: 'scale(0.8) translateY(-20px)', opacity: '0' },
+                '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+              },
+              'pop-in': {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              'fade-out': {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0' },
+              },
+              'fireworks': {
+                '0%': { transform: 'scale(0)', opacity: '1' },
+                '100%': { transform: 'scale(1.5)', opacity: '0' },
+              },
+              'spark': {
+                 '0%, 100%': { transform: 'scale(0)', opacity: 0 },
+                 '50%': { transform: 'scale(1)', opacity: 1 },
+              }
+            },
+            animation: {
+              'swoop-in': 'swoop-in 0.5s ease-out forwards',
+              'pop-in': 'pop-in 0.3s ease-out forwards',
+              'fade-out': 'fade-out 0.5s ease-out forwards',
+              'fireworks': 'fireworks 1.2s cubic-bezier(0.2, 0.8, 0.9, 1) forwards',
+              'spark': 'spark 0.8s ease-in-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.11.0"
+  }
+}
+</script>
+<style>
+  body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+</style>
+</head>
+  <body class="bg-brand-light">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
